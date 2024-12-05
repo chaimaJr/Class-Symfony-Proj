@@ -1,0 +1,31 @@
+<style>
+    table {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 150px
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 7px
+    }
+</style>
+<table>
+    <tr>
+        <th>Date Début</th>
+        <th>Date Fin</th>
+        <th>Lieu</th>
+        <th>Nom</th>
+        <th>Categorie</th>
+    </tr>
+    {% for e in listeE %}
+    <tr>
+        <td>{{ e.dateD | date }}</td>
+        <td>{{ e.dateD | date }}</td>
+        <td>{{ e.lieu }}</td>
+        <td>{{ e.nom }}</td>
+        <td>{{ e.categorie.nom }}</td>
+    </tr>
+    {% endfor %}
+</table>

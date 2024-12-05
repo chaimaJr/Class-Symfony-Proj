@@ -1,0 +1,7 @@
+_security_logout:
+    resource: security.route_loader.logout
+    type: service
+
+#access_control:
+#    - { path: ^/addVoiture, roles: ROLE_AGENT }     # only users with ROLE_AGENT can access /addVoiture page
+#    - { path: ^/profile, roles: ROLE_USER }

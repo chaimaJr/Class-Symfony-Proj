@@ -1,0 +1,37 @@
+{#<form method="get">#}
+{#    <label for="events">Nom : </label>#}
+{#    <input type="text" name="nom" value="{{ eventName }}">#}
+{#    <input type="submit" value="Search">#}
+{#</form>#}
+
+<form method="post">
+    <label for="nom">Nom : </label>
+    <input type="text" name="nom">
+    <input type="submit" value="Search">
+</form>
+
+
+{% if eventList is empty %}
+    La liste est vide
+
+{% else %}
+    Liste Events :
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Date Début</th>
+            <th>Date Fin</th>
+            <th>Lieu</th>
+            <th>Categorie</th>
+        </tr>
+        {% for e in eventList %}
+            <tr>
+                <td>{{ e.nom }}</td>
+                <td>{{ e.dateD | date }}</td>
+                <td>{{ e.dateD | date }}</td>
+                <td>{{ e.lieu }}</td>
+                <td>{{ e.categorie.nom | default('') }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
